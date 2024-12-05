@@ -4,7 +4,7 @@
 - No need to provide port because in server we decide what port should be assign.
 
 
-# Choosing a Build Tool
+# Choosing a Build Tool(webpack)
 
 
 - Babel : For transpiling modern JavaScript to older syntax.
@@ -14,8 +14,12 @@
         ```npm install --save-dev webpack webpack-cli```
     - Create a Webpack Configuration file in root:
          ```Add a webpack.config.js file```
+    - Add Script
+        ```"build": "webpack"```
+    
     - Content inside webpack.config.js
-       
+
+
 ```javascript
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -32,10 +36,10 @@ export default {
   target: 'node', // Specifies that the bundle is for Node.js
   mode: 'production', // Use 'development' for development mode
 };
+
 ```
 
-    - Add Script
-        ``` "build": "webpack"```
+  
 
 
 
@@ -43,4 +47,9 @@ export default {
 - pkg: To package your Node.js project into a single executable file.
 
 # How to host Node backend in IIS Server
-- 
+- Double Click handler mapping. Add Module Mapping
+    - Reuqest path: ```bundle.js```
+    - Module : ```iisnode```
+    - Name: ```iisnode``` 
+
+        ``Enjoy Hosting``
